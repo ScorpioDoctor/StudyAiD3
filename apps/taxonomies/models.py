@@ -48,7 +48,8 @@ class Tag(models.Model):
     """
     分类标签
     """
-    category1 = models.ForeignKey(FirstCategory, verbose_name="标签类别", on_delete=models.SET(get_sentinel_category1))
+    category1 = models.ForeignKey(FirstCategory, verbose_name="一级类目", on_delete=models.SET(get_sentinel_category1))
+    category2 = models.ForeignKey(SecondCategory, verbose_name="二级类目", on_delete=models.SET(get_sentinel_category2))
     name = models.CharField(max_length=25, verbose_name='标签名称')
     add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
 

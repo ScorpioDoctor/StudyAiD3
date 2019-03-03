@@ -1,0 +1,15 @@
+Username:  zhjm
+邮箱:  zhjm@qq.com
+Warning: Password input may be echoed.
+Password:  qazwsx123
+Warning: Password input may be echoed.
+Password (again):  qazwsx123
+Superuser created successfully.
+
+Username:  admin
+邮箱:  admin@qq.com
+Warning: Password input may be echoed.
+Password:  qazwsx123
+Warning: Password input may be echoed.
+Password (again):  qazwsx123
+Superuser created successfully.
