@@ -13,3 +13,10 @@ Password:  qazwsx123
 Warning: Password input may be echoed.
 Password (again):  qazwsx123
 Superuser created successfully.
+
+
+https://blog.csdn.net/l_vip/article/details/79156113
+django rest framework serializers小结
+
+Django rest framework serializing many to many field
+https://stackoverflow.com/questions/33182092/django-rest-framework-serializing-many-to-many-field

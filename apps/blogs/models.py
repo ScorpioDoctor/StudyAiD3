@@ -17,10 +17,10 @@ class Album(models.Model):
     category1 = models.ForeignKey(FirstCategory, verbose_name="一级类别", on_delete=models.SET(get_sentinel_category1))
     category2 = models.ForeignKey(SecondCategory, verbose_name="二级类别", on_delete=models.SET(get_sentinel_category2))
     tags = models.ManyToManyField(Tag, blank=True, verbose_name="文集标签")
-    user = models.ForeignKey(User, verbose_name='文集作者', on_delete=models.SET(get_sentinel_user)) # 给外键设置默认值
+    user = models.ForeignKey(User, verbose_name='文集作者', on_delete=models.SET(get_sentinel_user))  # 给外键设置默认值
     name = models.CharField(max_length=255, verbose_name='文集名称')
     brief = models.CharField(max_length=120, verbose_name='文集简介', default='这个文集暂无简介', blank=True)
-    cover = models.ImageField(upload_to='albums/images/', verbose_name='文集封面', max_length=255, null=True, blank=True)
+    cover = models.ImageField(upload_to='albums/images/', verbose_name='文集封面', max_length=255, null=True, blank=True, default='albums/images/albumcover.png')
     click_num = models.IntegerField(verbose_name='点击量', default=0)
     focus_num = models.IntegerField(verbose_name='关注量', default=0)
     add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
@@ -37,8 +37,8 @@ class Article(models.Model):
     category1 = models.ForeignKey(FirstCategory, verbose_name="一级类别", on_delete=models.SET(get_sentinel_category1))
     category2 = models.ForeignKey(SecondCategory, verbose_name="二级类别", on_delete=models.SET(get_sentinel_category2))
     tags = models.ManyToManyField(Tag, blank=True, verbose_name="文章标签")
-    user = models.ForeignKey(User, verbose_name='文章作者', on_delete=models.SET(get_sentinel_user)) # 给外键设置默认值
-    album = models.ForeignKey(Album, verbose_name='所属文集', on_delete=models.CASCADE) # 级联删除
+    user = models.ForeignKey(User, verbose_name='文章作者', on_delete=models.SET(get_sentinel_user))  # 给外键设置默认值
+    album = models.ForeignKey(Album, null=True, blank=True, verbose_name='所属文集', on_delete=models.CASCADE)  # 级联删除
     title = models.CharField(max_length=255, verbose_name='文章标题')
     brief = models.CharField(max_length=120, verbose_name='文章摘要', default='这篇文章没有摘要', blank=True)
     cover = models.ImageField(upload_to='articles/images/', verbose_name='文章封面', max_length=255, null=True, blank=True)
@@ -56,5 +56,3 @@ class Article(models.Model):
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
-
-

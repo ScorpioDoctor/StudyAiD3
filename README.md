@@ -1,1 +1,0 @@
-# StudyAiD3

@@ -25,8 +25,8 @@ class VerifyCodeAdmin(object):
     list_display = ['code', 'mobile', "add_time"]
 
 
-xadmin.site.unregister(UserProfile)
-xadmin.site.register(UserProfile, UserProfileAdmin)
+# xadmin.site.unregister(UserProfile)
+# xadmin.site.register(UserProfile, UserProfileAdmin)
 xadmin.site.register(VerifyCode, VerifyCodeAdmin)
 xadmin.site.register(views.BaseAdminView, BaseSetting)
 xadmin.site.register(views.CommAdminView, GlobalSettings)

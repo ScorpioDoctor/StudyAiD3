@@ -15,8 +15,8 @@ class SecondCategoryAdmin(object):
 
 
 class TagAdmin(object):
-    list_display = ["name", "category1", "category2", "add_time"]
-    list_filter = ["category1", "category2", "add_time", ]
+    list_display = ["name", "add_time"]
+    list_filter = ["add_time", ]
     search_fields = ['name', ]
 
 
